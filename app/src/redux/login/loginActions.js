@@ -15,9 +15,7 @@ const userLoginAction = (userId) => {
 }
 
 export const logoutUser = () => {
-    debugger
     return dispatch => {
-        debugger
         dispatch({
             type: LOGOUT_USER
         })

@@ -15,9 +15,12 @@ const DashboardBody = ({fetchAllChallenges, challengeData, addNewChallenge}) => 
         [selectedTag, setSelectedTag] = useState(tags[0])
 
     useEffect(() => {
-        // localStorage.setItem('challengeData', JSON.stringify(challengeData))
         fetchAllChallenges()
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('challengeData', challengeData)
+    }, [challengeData])
 
     const handleButtonClick = () => {
         setAddNewChallengeModalActive(true);

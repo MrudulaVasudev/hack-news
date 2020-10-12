@@ -3,11 +3,12 @@ import Card from '../Card';
 import { connect } from 'react-redux';
 
 const ChallengesTable = ({challengeData}) => {
+    debugger
     return (
         <div style={{position: "relative", top: "80px"}}>
             {
                 challengeData ? challengeData.map((d, ind) => {
-                    return <Card key={ind} details={d}/>
+                    return <Card key={ind} id={ind} details={d}/>
                 }) : <span>No Data Yet</span>
             }
         </div>
@@ -15,7 +16,7 @@ const ChallengesTable = ({challengeData}) => {
 }
 
 const mapStateToProps = state => {
-    console.log("From the table: ", state)
+    console.log("From the table", state)
     return {
         challengeData: state.challengesReducer.challengesList
     }
