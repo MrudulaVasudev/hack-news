@@ -14,8 +14,8 @@ const Login = ({loginUser, isLoggedIn}) => {
     }, [isLoggedIn])
 
     const authenticateUser = (e) => {
+        console.log(e.currentTarget.value)
 		e.preventDefault();
-        console.log(e.currentTarget[0].value)
         loginUser()
 	}
 

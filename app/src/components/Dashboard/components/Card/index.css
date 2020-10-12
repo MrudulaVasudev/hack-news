@@ -1,0 +1,31 @@
+.card-wrapper {
+    border: 1px solid gray;
+    padding:15px;
+    margin: 10px;
+}
+
+.card-details {
+    display: flex
+}
+
+.left-partition {
+    width: 600px;
+}
+
+.right-partition {
+    width: 1000px;
+}
+
+.tags {
+    margin-top: 15px;
+}
+
+.actions {
+    display: flex;
+    position: relative;
+    top: 12px;
+    left: 450px;
+}
+.action-item {
+    margin-left: 15px;
+}
