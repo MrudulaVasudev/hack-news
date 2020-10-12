@@ -1,13 +1,25 @@
-import { LOGIN_USER } from './loginTypes';
+import { LOGIN_USER, LOGOUT_USER } from './loginTypes';
 
-export const loginUser = () => {
+export const loginUser = (userId) => {
     return dispatch => {
-        dispatch(userLoginAction())
+        dispatch(userLoginAction(userId))
+        localStorage.setItem("loggedInUser", userId)
     }
 }
 
-const userLoginAction = () => {
+const userLoginAction = (userId) => {
     return {
-        type: LOGIN_USER
+        type: LOGIN_USER,
+        userId: userId
+    }
+}
+
+export const logoutUser = () => {
+    debugger
+    return dispatch => {
+        debugger
+        dispatch({
+            type: LOGOUT_USER
+        })
     }
 }

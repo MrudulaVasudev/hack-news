@@ -14,9 +14,8 @@ const Login = ({loginUser, isLoggedIn}) => {
     }, [isLoggedIn])
 
     const authenticateUser = (e) => {
-        console.log(e.currentTarget.value)
 		e.preventDefault();
-        loginUser()
+        loginUser(e.target[0].value)
 	}
 
     return (
@@ -38,14 +37,14 @@ const Login = ({loginUser, isLoggedIn}) => {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.isLoggedIn
+        isLoggedIn: state.loginReducer.isLoggedIn
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        loginUser: () => {
-            dispatch(loginUser())
+        loginUser: (user) => {
+            dispatch(loginUser(user))
         }
     }
 }

@@ -1,7 +1,8 @@
-import { LOGIN_USER } from "./loginTypes";
+import { LOGIN_USER, LOGOUT_USER } from "./loginTypes";
 
 const initialState = {
-    isLoggedIn: false
+    isLoggedIn: false,
+    loggedInUser: ""
 }
 
 const loginReducer = (state = initialState, action) => {
@@ -9,7 +10,14 @@ const loginReducer = (state = initialState, action) => {
         case LOGIN_USER:
             return {
                 ...state,
-                isLoggedIn: true
+                isLoggedIn: true,
+                loggedInUser: action.userId
+            }
+
+        case LOGOUT_USER:
+            return {
+                ...state,
+                isLoggedIn: false
             }
 
         default: return state;

@@ -1,5 +1,10 @@
 .header-title {
-    width: 100%;
-    text-align: center;
+    width: 80%;
     font-size: 24px;
+}
+
+.logoutLink {
+    position: relative;
+    left:175px;
+    font-weight: 600
 }
